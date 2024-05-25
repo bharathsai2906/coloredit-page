@@ -1,0 +1,126 @@
+...HTML..
+
+  <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+	</script>
+    <link rel="stylesheet" href="color.css">
+</head>
+
+<body>
+	<div class="button-maker-bg-container p-4">
+		<h1 class="button-maker-heading text-center mb-4">Button Maker</h1>
+		<div class="button-maker-container bg-light pt-4 pb-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-7">
+						<p class="input-label">BACKGROUND COLOR</p>
+						<input id="bgColorInput" class="user-input" type="text" />
+						<p class="input-label">FONT COLOR</p>
+						<input id="fontColorInput" class="user-input" type="text" />
+						<p class="input-label">FONT SIZE (in px)</p>
+						<input id="fontSizeInput" class="user-input" type="text" />
+						<p class="input-label">FONT WEIGHT</p>
+						<input id="fontWeightInput" class="user-input" type="text" />
+						<p class="input-label">PADDING (in px)</p>
+						<input id="paddingInput" class="user-input" type="text" />
+						<p class="input-label">BORDER RADIUS (in px)</p>
+						<input id="borderRadiusInput" class="user-input" type="text" />
+						<div class="text-right mt-4">
+							<button id="applyButton" class="btn btn-primary" onclick="onApplyProperties()">
+                                Apply
+                            </button>
+						</div>
+					</div>
+					<div class="col-12 col-md-5 mt-4 text-center">
+						<button id="customButton" class="custom-button">Custom Button</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="color.js"></script>
+</body>
+
+</html>
+
+    .CSS...
+
+    @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.button-maker-bg-container {
+    background-image: linear-gradient(to right, #09203f, #537895);
+}
+
+.button-maker-heading {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.button-maker-container {
+    border-radius: 10px;
+}
+
+.input-label {
+    color: #7b8794;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.user-input {
+    width: 100%;
+    height: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cbd2d9;
+    border-radius: 4px;
+    padding-left: 12px;
+}
+
+.custom-button {
+    font-family: "Roboto";
+}
+
+.JS...
+
+let bgColorInputE1 = document.getElementById("bgColorInput");
+let fontColorInputE1 = document.getElementById("fontColorInput");
+let fontSizeInputE1 = document.getElementById("fontSizeInput");
+let fontWeightInputE1 = document.getElementById("fontWeightInput");
+let paddingInputE1 = document.getElementById("paddingInput");
+let borderRadiusInputE1 = document.getElementById("borderRadiusInput");
+let customButtonE1 = document.getElementById("customButton");
+
+function onApplyProperties() {
+  let bgColorValue = bgColorInputE1.value;
+  let fontColorValue = fontColorInputE1.value;
+  let fontSizeValue = fontSizeInputE1.value;
+  let fontWeightValue = fontWeightInputE1.value;
+  let paddingValue = paddingInputE1.value;
+  let borderRadiusValue = borderRadiusInputE1.value;
+  customButtonE1.style.backgroundColor = bgColorValue;
+  customButtonE1.style.color = fontColorValue;
+  customButtonE1.style.fontSize = fontSizeValue;
+  customButtonE1.style.fontWeight = fontWeightValue;
+  customButtonE1.style.padding = paddingValue;
+  customButtonE1.style.borderRadius = borderRadiusValue;
+}
